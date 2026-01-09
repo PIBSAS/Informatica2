@@ -20,7 +20,262 @@
     <p>
       Un puntero es un tipo de dato que permite almacenar una dirección de memoria. Esto quiere decir que un puntero apunta a una determinada ubicación en la memoria.
     </p>
+    <img src="img/" alt="">
+    <h3>Declaración</h3>
+    <p>
+      Para poder declarar una variable de tipo puntero se necesita asignarle un nombre, precedido 
+      por un tipo asociado y el operador de indirección (*).”Tipo asociado” es cualquier tipo de dato, 
+      tanto los definidos por el compilador como los definidos por el usuario. 
+    </p>
+
+    <h3>Sintaxis</h3>
+    <code>tipo asociado* nombre puntero;</code>
+    <code>int * punt;</code>
+    <p>
+      En este ejemplo se declara a la variable <i>punt</i> como un puntero que está asociado al tipo de dato <i>int</i>, es decir que <i>punt</i> es un puntero a entero.
+    </p>
     
+    <h3>Tamaño de los punteros</h3>
+    <p>
+      Dado que un puntero puede almacenar una dirección de memoria, su tamaño será el necesario 
+      para guardar en forma adecuada dicho valor.
+      En la actualidad, este valor es de 4 bytes (32 bits), lo que permite direccionar memorias de 4GB. Probablemente 
+      en un futuro su tamaño puede cambiar; no obstante siempre se puede obtener su dimensión mediante el uso del comando <code>sizeof</code>.
+    </p>
+
+    <h3>Operadores</h3>
+    <p>
+      Los punteros tienen asociados dos operadores: el operador de direccionamiento (&) y el 
+      operador de indireccionamiento (*).
+    </p>
+
+    <h4>Operador de direccionamiento (&)</h4>
+    <p>
+      Este operador permite poder obtener la dirección de una variable.
+    </p>
+    <pre><code>
+    int a;
+    int *pi;
+    pi=&amp;a;
+    </code></pre>
+    <p>
+      En este caso, el puntero <b>pi</b> guardará la dirección de comienzo de la variable <b>a</b>.
+    </p>
+    <h5>Ejemplo</h5>
+    <pre>
+      <code>
+//-------------------------------------------------------------------
+#include<stdio.h>
+//-------------------------------------------------------------------
+int main(void)
+{
+  int i,*pi;
+  printf(“\nLa dirección de i es :%p”,&i);
+  /* Se muestra la dirección de i utilizando el operador & */
+  pi=&i;
+  printf(“\nLa dirección de i es :%p\n\n”,pi);
+  /* Indica la dirección utilizando un puntero */
+  return 0;
+}
+//------------------------------------------------------------------
+</code>
+    </pre>
+    <p>
+        Se puede observar cómo se obtiene la dirección de una variable utilizando tanto el operador 
+        de direccionamiento como un puntero.
+        Se observa que para mostrar el contenido de un puntero mediante el uso de la función printf, 
+        se debe utilizar el especificador de formato %p.
+    </p>
+
+    <h5>Ejemplo</h5>
+    <pre><code>
+//-------------------------------------------------------------------
+#include<stdio.h>
+//-------------------------------------------------------------------
+int main(void)
+{
+  int i=1,*pi=&i;
+  /* Declara e inicializa al puntero pi con la dirección de la variable i */
+  printf(“ i = %d\n”,i);
+  printf(“dir i = %p\n”,&i);
+  /* Muestra la dirección de i utilizando el operador & */
+  printf(“ i = %d\n”,*pi);
+  printf(“dir i = %p\n”,pi);
+  /* Muestra la dirección y el contenido de i utilizando el puntero pi */
+  return 0;
+}
+//------------------------------------------------------------------
+    </code></pre>
+
+    <p>
+      En este programa se muestra cómo un puntero apunta a una variable y cómo se puede acceder al valor almacenado en ella utilizando un puntero.
+    </p>
+
+    <h4>Operador de indirección (*)</h4>
+    <p>
+      Este operador permite acceder al contenido de la memoria que es apuntada por el puntero.
+    </p>
+    <pre>
+      <code>
+    int a,*pi;
+    pi=&amp;a;
+    *pi=4;
+      </code></main>pre>
+      <p>
+        Vemos que el puntero pi apunta a la variable a, Al acceder de este modo al contenido de la 
+memoria, se escribió en esa dirección el valor 4, modificando indirectamente el valor de la 
+variable a.
+      </p>
+      <h5>Ejemplo</h5>
+      <pre><code>
+      //-------------------------------------------------------------------
+#include<stdio.h>
+//-------------------------------------------------------------------
+int main(void)
+{
+int i,*pi,*pj;
+char c,*pc;
+f
+loat f,*pf;
+pi=&i;
+pc=&c;
+pf=&f;
+/* Inicializa a los punteros con las direcciones de las 
+  variables correspondientes */
+printf(“\nLa dirección de i es: %p\n”,&i);
+printf(“El contenido de pi es: %p\n”,pi);
+printf(“\nLa dirección de c es: %p\n”,&c);
+printf(“El contenido de pc es: %p\n”,pc);
+printf(“\nLa dirección de f es: %p\n”,&f);
+printf(“El contenido de pf es: %p\n”,pf);
+/* Muestra las direcciones de las variables y sus contenidos 
+  utilizando los punteros */
+pj=pi;
+printf(“\nLa dirección de i es: %p\n”,&i);
+printf(“El contenido de pi es: %p\n”,pi);
+printf(“El contenido de pj es: %p\n”,pj);
+pc=0x7A34;
+pf=567;
+/* Le asigna a los punteros direcciones de memoria */
+printf(“\nEl contenido de pc es: %p\n”,pc);
+printf(“El contenido de pf es: %p\n”,pf);
+/* Muestra los valores almacenados por los punteros */
+return 0;
+}
+//------------------------------------------------------------------  
+      </code></pre>  
+        <p>
+          Aquí comprobamos cómo se pueden apuntar los punteros a diferentes variables y posiciones de memoria.
+        </p>
+
+        <h5>Ejemplo</h5>
+        <pre><code>
+//-------------------------------------------------------------------
+#include<stdio.h>
+//-------------------------------------------------------------------
+int main(void)
+{
+int i,*pi;
+float j,*pj;
+char k,*pk;
+i=1000;
+pi=&amp;i;
+j=3.18;
+pj=&amp;j;
+k='c';
+pk=&amp;k;
+/* Inicializa a las variables y a los punteros */
+printf(“\n%d\t%p\t%f\t%p\t%c\t%p\n”,i,pi,j,pj,k,pk);
+/* Muestra los contenidos de las variables y los punteros */
+for(i=-5;i<6;i++,pi++,pj++,pk++)
+{
+/* Incrementa a los punteros y muestra el estado de las 
+variables, los punteros y los contenidos de las 
+direcciones de memoria a las que apuntan */
+
+printf(“\n%d\t%p\t%f\t%p\t%c\t%p”,i,pi,j,pj,k,pk);
+printf(“\n%d\t%p\t%f\t%p”,*pi,pi,*pj,pj);
+printf(“\t%c\t%p\n\n”,*pk,pk);
+}
+printf(“\n\n”);
+return 0;
+}
+//-------------------------------------------------------------------
+      </code></pre>
+     <p>
+      En este ejemplo observamos cómo se van incrementando los punteros y permiten recorrer la 
+      memoria y ver su contenido.
+     </p>
+
+     <h3>Operaciones que admiten los punteros</h3>
+
+     <h4>Asignación</h4>
+
+     <p>
+      A un puntero se le puede asignar un valor entero: el significado es una dirección de memoria.
+Debemos recordar que la memoria está dividida en celdas de 1 byte cada una, por lo que, 
+entre una posición y la siguiente, la distancia que los separa es uno (1). Esto implica que, no se puede acceder a una posición intermedia en una celda.
+El operador que se utiliza es el de asignación (=).
+     </p>
+
+     <pre><code>
+    int *pi;
+    pi=0xA7B4CEF9;
+     </code></pre>
+     <img src="img/" alt="Operador de asignación">
+     <p>
+      En este caso se le asigna un valor numérico entero.
+También admiten la asignación de la dirección de una variable. Para realizar esta operación 
+se utiliza el operador de direccionamiento (&).
+     </p>
+     <pre><code>
+    int a;
+    pi=&amp;a;
+     </code></pre>
+     <img src="img/" alt="Operador de direccionamiento">
+
+     <h5>Ejemplo</h5>
+     <pre><code>
+//-------------------------------------------------------------------
+#include<stdio.h>
+//-------------------------------------------------------------------
+int main(void)
+{
+  int i,*pi;
+pi=&i;
+*pi=45;
+/* Se modifica el contenido de la variable a través del 
+  puntero */
+printf(“\nEl valor que contiene i es: %d”,i);
+i=39;
+printf(“\nEl valor que contiene i es: %d\n”,*pi);
+/* Se muestra el contenido de la variable utilizando el
+puntero */
+return 0; 
+}
+//-------------------------------------------------------------------
+     </code></pre>
+
+     <p>
+      Se observa en el ejemplo cómo se puede acceder al contenido de una variable utilizando un 
+puntero, ya sea para escribir en la variable como para leerla.
+     </p>
+     <p>
+      Otro valor que se le puede asignar a un puntero es otro puntero. Como es general en C, a toda 
+variable de un determinado tipo se le puede asignar otra variable del mismo tipo.
+     </p>
+     <img src="img/" alt="Reasignación de variable">
+     <pre><code>
+int *pj,*pi;
+pj=0xF39B6246; 
+pj=pi;
+     </code></pre>
+     <p>
+      Hay que tener en cuenta que cuando se declara un puntero hay que inicializarlo, ya que el 
+valor que contiene luego de la declaración es basura. En este caso se dice que el puntero está 
+descontrolado, y pueden cometerse errores muy peligrosos en el caso de utilizarlo.
+     </p>
+     QUEDO EN PAGINA 12
 </main>
 
 <footer>
