@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Memoria dinámica</title>
   <meta name="author" content="Ing. Osvaldo M. Pini"/>
   <meta name="created" content="2020-04-18T23:43:27"/>
@@ -17,7 +17,8 @@
 </head>
 
 <body>
-
+<main>
+  <div class="container">
 <h1>MEMORIA DINÁMICA</h1>
 
 <p>En muchas aplicaciones no se conoce con anticipación la cantidad de memoria necesaria para las variables a utilizar en un programa.</p>
@@ -28,17 +29,18 @@
 
 
 
-<h2>Asignación dinámica de memoria</b></u></p>
+<h2>Asignación dinámica de memoria</h2>
 
-<p>El compilador divide a la memoria en tres zonas</p>
+<p>El compilador divide a la memoria en tres zonas:</p>
 <img class="img-center" src="img/0034.png" alt="Memoria">
 
-<p>Estática: donde se ubica el código, las variables globales.</p>
+<ul>
+<li><b>Estática:</b> donde se ubica el código, las variables globales.</li>
 
-<p>Stack ( pila ): variables locales y direcciones de retorno de funciones. </p>
+<li><b>Stack ( pila ):</b> variables locales y direcciones de retorno de funciones.</li>
 
-<p>heap ( zona de memoria libre )</p>
-
+<li><b>Heap:</b> zona de memoria libre.</li>
+</ul>
 
 
 <h2>Función malloc()</h2>
@@ -47,23 +49,23 @@
 
 <h3>Prototipo</h3>
 
-<pre class="line-numbers"><code class="language-c">void *malloc(unsigned int tamaño_requerido);</code></pre>
+<pre><code class="language-c">void *malloc(unsigned int tamaño_requerido);</code></pre>
 
 <p><b>tamaño_requerido:</b> cantidad de bytes solicitados</p>
 
-<p>Devuelve un puntero a void que contiene la dirección de memoria en donde ésta ubicado el bloque asignado por ella. En caso de que no exista lugar disponible en la memoria para asignar dicha solicitud retorna un puntero nulo.</p>
+<p>Devuelve un <b>puntero a void</b> que contiene la dirección de memoria en donde ésta ubicado el bloque asignado por ella. En caso de que no exista lugar disponible en la memoria para asignar dicha solicitud <b>retorna un puntero nulo</b>.</p>
 
-<p>Un puntero a void es un puntero que no apunta a ningún tipo específico, éste se incrementa en un byte. Normalmente se debe realizar un casting de dicho puntero.</p>
+<p>Un <b>puntero a void</b> es un puntero que no apunta a ningún tipo específico, éste se incrementa en un byte. Normalmente se debe realizar un <b>casting</b> de dicho puntero.</p>
 
 
 
 <h2>Función free()</h2>
 
-<p>Libera un bloque de memoria pedido por la función malloc().</p>
+<p>Libera un bloque de memoria pedido por la función <b>malloc()</b>.</p>
 
 <h3>Prototipo</h3>
 
-<pre class="line-numbers"><code class="language-c">void free(void *bloque_pedido);</code></pre>
+<pre><code class="language-c">void free(void *bloque_pedido);</code></pre>
 
 <p><b>bloque_pedido:</b> dirección del bloque de memoria solicitado.</p>
 
@@ -71,22 +73,27 @@
 
 <h2>Sizeof</h2>
 
-<p>Devuelve el tamaño en bytes de la expresión o del tipo dado.</p>
+<p>Devuelve el tamaño en <b>bytes</b> de la expresión o del tipo dado.</p>
 
 <h3>Sintaxis</h3>
 
-<pre class="line-numbers"><code class="language-c">sizeof &lt;expresión&gt;</code></pre>
+<pre><code class="language-c">sizeof &lt;expresión&gt;</code></pre>
 
-<p>O</p>
+<p><b>O</b></p>
 
-<pre class="line-numbers"><code class="language-c">sizeof ( &lt;tipo&gt; )</code></pre>
+<pre><code class="language-c">sizeof ( &lt;tipo&gt; )</code></pre>
+</div>
+</main>
 
-<script src="js/prism.js"></script>
 
 <footer class="footer-nav">
+  <div class="container">
   <a href="archivos.html" class="btn">Anterior</a>
   <a href="estructura.html" class="btn">Siguiente</a>
+  </div>
 </footer>
+
+<script src="js/prism.js"></script>
 
 </body>
 </html>

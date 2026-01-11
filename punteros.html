@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PUNTEROS</title>
   <meta name="author" content="Ing. Osvaldo M. Pini"/>
   <meta name="created" content="2020-04-01T23:56:05"/>
@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="css/prism.css">
 </head>
 <body>
-
+<main>
+  <div class="container">
 <h1>PUNTEROS</h1>
 
 <p>Un puntero es un tipo de dato que permite almacenar una dirección de memoria.</p>
@@ -53,7 +54,7 @@
 
 <h1>OPERADORES</h1>
 
-<p>Los punteros tienen asociados dos operadores, el operador de direccionamiento (&amp;) y el operador de indireccionamiento (*).</p>
+<p>Los punteros tienen asociados dos operadores, el operador de direccionamiento <strong>(&amp;)</strong> y el operador de indireccionamiento <strong>(*)</strong>.</p>
 
 <h2>OPERADOR DE DIRECCIONAMIENTO (&amp;)</h2>
 
@@ -76,7 +77,7 @@ pi=&amp;a;
 *pi=4;
 </code></pre>
 
-<p>El significado de estas líneas es que como el puntero pi apunta a la variable a, al hacer que mediante el puntero acceda al contenido de la memoria se escribió en esa dirección el valor 4, modificando indirectamente el valor de la variable a.</p>
+<p>El significado de estas líneas es que como el puntero <strong>pi</strong> apunta a la variable <strong>a</strong>, al hacer que mediante el puntero acceda al contenido de la memoria se escribió en esa dirección el valor <strong>4</strong>, modificando indirectamente el valor de la variable <strong>a</strong>.</p>
 
 
 
@@ -94,7 +95,7 @@ pi=&amp;a;
 
 <p>A un puntero se le puede asignar un valor entero, el significado es una dirección de memoria.</p>
 
-<p>Debemos recordar que la memoria está dividida en celdas de 1 byte cada una, por lo que entre una posición y la siguiente la distancia que los separa es uno (1).</p>
+<p>Debemos recordar que la memoria está dividida en celdas de <strong>1 byte</strong> cada una, por lo que entre una posición y la siguiente la distancia que los separa es uno (<b>1</b>).</p>
 
 
 
@@ -166,7 +167,7 @@ pi=pj;
 
 <p>Este valor puede ser positivo, que indica que el puntero que esta como minuendo está apuntando a una dirección más alta de la memoria, si fuese negativo indicaría lo contrario.</p>
 
-<p>Hay que tener mucho cuidado con esta interpretación ya que no indica la distancia expresada en bytes.</p>
+<p>Hay que tener mucho cuidado con esta interpretación ya que <strong>no indica la distancia expresada en bytes.</strong></p>
 
 
 
@@ -212,7 +213,7 @@ pi=pj;
 
 <h1>PUNTEROS Y VECTORES</h1>
 
-<p>Si se declara un vector, el compilador reservara la cantidad de memoria necesaria para el mismo, comenzando desde la posición cero (0).</p>
+<p>Si se declara un vector, el compilador reservara la cantidad de memoria necesaria para el mismo, comenzando desde la posición cero <strong>(0)</strong>.</p>
 
 <p>Cuando se hace referencia a un elemento determinado del vector, se utiliza el nombre seguido de un subíndice.</p>
 
@@ -366,13 +367,17 @@ int * vec[10];
 <p><b>Utilice el compilador, ejecuta paso a paso los siguientes programas</b></p>
 
 <pre><code class="language-c">Punt19.c</code></pre>
-
-<script src="js/prism.js"></script>
+</div>
+</main>
 
 <footer class="footer-nav">
+  <div class="container">
   <a href="index.html" class="btn">Anterior</a>
   <a href="recursividad.html" class="btn">Siguiente</a>
+  </div>
 </footer>
+
+<script src="js/prism.js"></script>
 
 </body>
 </html>

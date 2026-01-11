@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estructura de datos</title>
   <meta name="author" content="Ing. Osvaldo M. Pini"/>
   <meta name="created" content="1999-07-22T18:46:53.060000000"/>
@@ -15,6 +15,8 @@
   </script>
 </head>
 <body>
+<main>
+  <div class="container">
 <h1>ESTRUCTURAS DE DATOS</h1>
 
 \[
@@ -73,7 +75,7 @@
 
 <h1>COLA - BUFFER</h1>
 
-<p>El Primer dato que se ingresa es el primero que se lee.</p>
+<p>El primer dato que se ingresa es el primero que se lee.</p>
 
 <p>Se utilizan don punteros o índices.</p>
 
@@ -87,13 +89,13 @@
 
 
 
-<p>Cuando los índices coinciden estamos en la condición de COLA VACIA</p>
+<p>Cuando los índices coinciden estamos en la condición de <b>COLA VACIA</b></p>
 
-<p>Cuando el índice de escritura excede el limite estamos en la condición de COLA LLENA</p>
+<p>Cuando el índice de escritura excede el limite estamos en la condición de <b>COLA LLENA</b></p>
 
-<p>NO SE PUEDE INSPECCIONAR EL CONTENIDO DE UNA COLA, PORQUE SE DESTRUYEN LOS DATOS.</p>
+<p><strong>NO SE PUEDE INSPECCIONAR EL CONTENIDO DE UNA COLA, PORQUE SE DESTRUYEN LOS DATOS.</strong></p>
 
-<p>Se creara una función de lectura y una de escritura.</p>
+<h3>Se creara una función de lectura y una de escritura:</h3>
 
 <pre class="line-numbers"><code class="language-c">
 void Ingreso(int *Ing,int *Ext,float *Cola)
@@ -110,7 +112,7 @@ scanf(&quot;%f&quot;,&amp;Cola[*Ing]);
 (*Ing)++;
 }
 </code></pre>
-<img src="img/0035.png" alt="Ingreso">
+<img class="img-center" src="img/0035.png" alt="Ingreso">
 
 
 <pre class="line-numbers"><code class="language-c">
@@ -127,7 +129,7 @@ printf(&quot;\nEl dato es : %f&quot;,Cola[*Ext]);
 (*Ext)++;
 }
 </code></pre>
-<img src="img/0036.png" alt="Lee">
+<img class="img-center" src="img/0036.png" alt="Lee">
 
 
 
@@ -137,26 +139,26 @@ printf(&quot;\nEl dato es : %f&quot;,Cola[*Ext]);
 
 <p>Una vez que se llena y se vacia no se puede volver a utilizar</p>
 
-<p>En ese caso se da la condicion de COLA VACIA y COLA LLENA simultaneamente.</p>
+<p>En ese caso se da la condicion de <b>COLA VACIA</b> y <b>COLA LLENA</b> simultaneamente.</p>
 
-<p>La solucion es la COLA CIRCULAR</p>
+<p>La solucion es la <b>COLA CIRCULAR</b></p>
 
 <h1>COLA CIRCULAR</h1>
 
 <p>Ambos indices siempre se incrementan.</p>
 
-<p>Cuando un indice supera el limite se produce un SALTO CIRCULAR</p>
+<p>Cuando un indice supera el limite se produce un <b>SALTO CIRCULAR</b></p>
 
 <p>Vuelve al inicio</p>
 
-<p>Cuando los dos indices coinciden podemos tener la condicion de COLA LLENA o COLA VACIA</p>
+<p>Cuando los dos indices coinciden podemos tener la condicion de <b>COLA LLENA</b> o <b>COLA VACIA</b></p>
 
-<p>Se soluciona agregando dos banderas</p>
+<p>Se soluciona agregando dos banderas:</p>
+<ul>
+<li>Una que indique <b>cola llena</b></li>
 
-<p>Una que indique cola llena</p>
-
-<p>Otra que indique cola vacia</p>
-
+<li>Otra que indique cola <b>vacia</b></li>
+</ul>
 
 <pre class="line-numbers"><code class="language-c">
 void Ingre(int *Cola,int **Ing,int *Lle,int *Vac,int *Egr)
@@ -177,7 +179,7 @@ if(*Ing==Egr)
   *Lle=1;
 }
 </code></pre>
-<img src="img/0037.png" alt="Ingreso Egreso">
+<img class="img-center" src="img/0037.png" alt="Ingreso Egreso">
 
 
 <pre class="line-numbers"><code class="language-c">
@@ -199,13 +201,13 @@ if(*Egr==Ing)
   *Vac=1;
 }
 </code></pre>
-<img src="img/0038.png" alt="Lee ingreso egreso">
+<img class="img-center" src="img/0038.png" alt="Lee ingreso egreso">
 
 
 
 <h1>PILA-STACK</h1>
 
-<p>El Primer dato que se ingresa es el ultimo que se lee.</p>
+<p>El primer dato que se ingresa es el ultimo que se lee.</p>
 
 <p>Se utiliza un puntero o índice.</p>
 
@@ -215,13 +217,13 @@ if(*Egr==Ing)
 
 
 
-<p>Cuando el índice de pila apunta al comienzo estamos en la condición de PILA VACIA</p>
+<p>Cuando el índice de pila apunta al comienzo estamos en la condición de <b>PILA VACIA</b></p>
 
-<p>Cuando el índice de pila excede el limite estamos en la condición de PILA LLENA</p>
+<p>Cuando el índice de pila excede el limite estamos en la condición de <b>PILA LLENA</b></p>
 
-<p>NO SE PUEDE INSPECCIONAR EL CONTENIDO DE UNA PILA, PORQUE SE DESTRUYEN LOS DATOS.</p>
+<p><strong>NO SE PUEDE INSPECCIONAR EL CONTENIDO DE UNA PILA, PORQUE SE DESTRUYEN LOS DATOS.</strong></p>
 
-<p>Se creara una función de lectura y una de escritura. </p>
+<h3>Se creara una función de lectura y una de escritura. </h3>
 
 
 <pre class="line-numbers"><code class="language-c">
@@ -239,7 +241,7 @@ scanf(&quot;%f&quot;,&amp;Pila[*Indice]);
 (*Indice)++;
 }
 </code></pre>
-<img src="img/0039.png" alt="Ingreso stack">
+<img class="img-center" src="img/0039.png" alt="Ingreso stack">
 
 
 <pre class="line-numbers"><code class="language-c">
@@ -256,14 +258,20 @@ void Lee(int *Indice,float *Pila)
   printf(&quot;\nEl dato es : %f&quot;,Pila[*Indice]);
 }
 </code></pre>
-<img src="img/0039.png" alt="Lectura stack">
+<img class="img-center" src="img/0039.png" alt="Lectura stack">
 
-<script src="js/prism.js"></script>
+</div>
+
+</main>
 
 <footer class="footer-nav">
+  <div class="container">
   <a href="memoria.html" class="btn">Anterior</a>
   <a href="lista.html" class="btn">Siguiente</a>
+  </div>
 </footer>
+
+<script src="js/prism.js"></script>
 
 </body>
 </html>

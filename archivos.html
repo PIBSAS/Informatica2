@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Archivos</title>
   <meta name="author" content="Ing. Osvaldo M. Pini"/>
   <meta name="created" content="2003-09-03T23:16:14.932000000"/>
@@ -13,6 +13,8 @@
 </head>
 
 <body>
+<main>
+  <div class="container">
 <h1>ARCHIVOS</h1>
 
 <h2>STREAMS</h2>
@@ -21,16 +23,15 @@
 <p>En formato binario no se produce ningún tipo de transformación de los datos </p>
 <p>En el formato de texto se producen conversiones de los valores de los datos al formato ASCII. </p>
 <p>Cuando sucede que el buffer se lleno se envía el contenido de este al dispositivo de salida. </p>
-
-
-
 <p>En el caso de una operación de entrada se toman los datos hasta que se vacíe para realizar un nuevo ingreso de datos desde el dispositivo.</p>
 <p>Este sistema de procesamiento de datos tiene la característica que cuando se produce un fin anormal del programa se pierden los datos almacenados en el flujo.</p>
 
 <!--<p>Este almacenamiento se realiza tanto para manejar datos en formato binario o de texto. </p>
 -->
 <h2>STREAMS STANDARD</h2>
+
 <p>Existen 5 streams standars que se abren al iniciar un programa en C</p>
+
 <div class="tablecontainer">
 <table>
   <tr>
@@ -59,7 +60,7 @@
 
 <h2>APERTURA DE ARCHIVOS</h2>
 
-<pre class="line-numbers"><code class="language-c">
+<pre><code class="language-c">
 FILE *fopen(char *nombre,char *modo)
 </code></pre>
 <p><b>nombre:</b> nombre, unidad y ruta del archivo</p>
@@ -123,114 +124,129 @@ FILE *fopen(char *nombre,char *modo)
 </table>
 </div>
 
+
 <h2>CIERRE DE ARCHIVO</h2>
 
-<pre class="line-numbers"><code class="language-c">int fclose(FILE *fp)</code></pre>
+<pre><code class="language-c">int fclose(FILE *fp)</code></pre>
 
 <p><b>fp:</b> puntero asociado al archivo</p>
 
-<p>Devuelve 0 si se ejecuta correctamente, si ocurre un error EOF.</p>
+<p>Devuelve <strong>0</strong> si se ejecuta correctamente, si ocurre un error <strong>EOF</strong>.</p>
+
 
 <h2>ESCRITURA/LECTURA DE UN CARÁCTER</h2>
 
-<div class="tablecontainer">
-<table>
-    <tr>
-        <th><pre class="line-numbers"><code class="language-c">int fgetc(FILE *fp)</code></pre></th>
-        <th><pre class="line-numbers"><code class="language-c">int fputc(int ch,FILE *fp)</code></pre></th>
-    </tr>
-    <tr>
-        <td><p><b>fp:</b> archivo asociado</p></td>
-        <td><p><b>ch:</b> carácter a escribir</p></td>
-    </tr>
-    <tr>
-        <td> </td>
-        <td><p><b>fp:</b> archivo asociado</p></td>
-    </tr>
-    <tr>
-        <td><p><b>fgetc</b> devuelve el carácter si exitosa, <b>EOF</b> si error</p></td>
-        <td><p><b>fputc</b> devuelve el carácter si exitosa, <b>EOF</b> si error</p></td>
-    </tr>
-</table>
+<div class="op-grid no-img">
+<div>
+<pre><code class="language-c">int fgetc(FILE *fp)</code></pre>
+<p><b>fp:</b> archivo asociado</p>
+<p><b>fgetc</b> devuelve el carácter si exitosa, <b>EOF</b> si error</p>
+</div>
+
+<div>
+<pre><code class="language-c">int fputc(int ch,FILE *fp)</code></pre>
+<p><b>ch:</b> carácter a escribir</p>
+<p><b>fp:</b> archivo asociado</p>
+<p><b>fputc</b> devuelve el carácter si exitosa, <b>EOF</b> si error</p>
+</div>
 </div>
 
 
 <h2>DETECCION DE EOF Y ERROR</h2>
 
-<div class="tablecontainer">
-<table>
-    <tr>
-        <th><pre class="line-numbers"><code class="language-c">int feof(FILE *fp)</code></pre></th>
-        <th><pre class="line-numbers"><code class="language-c">int ferror(FILE *fp)</code></pre></th>
-    </tr>
-    <tr>
-        <td><p><b>fp:</b> archivo asociado</p></td>
-        <td><p><b>fp:</b> archivo asociado</p></td>
-    </tr>
-    <tr>
-        <td><p>Devuelve distinto de 0 si EOF, en caso contrario 0</p></td>
-        <td><p>Devuelve 0 si no hubo error, si hubo un error distinto de 0</p></td>
-    </tr>
-    <tr>
-        <td><p><b>fgetc</b> devuelve el carácter si exitosa, <b>EOF</b> si error</p></td>
-        <td><p><b>fputc</b> devuelve el carácter si exitosa, <b>EOF</b> si error</p></td>
-    </tr>
-</table>
+<div class="op-grid no-img">
+
+<div>
+<pre class="line-numbers"><code class="language-c">int feof(FILE *fp)</code></pre>
+<p><b>fp:</b> archivo asociado</p>
+<p>Devuelve distinto de <b>0</b> si <b>EOF</b>, en caso contrario <strong>0</strong></p>
+<p><b>fgetc</b> devuelve el carácter si exitosa, <b>EOF</b> si error</p>
+</div>
+
+<div>
+<pre><code class="language-c">int ferror(FILE *fp)</code></pre>
+<p><b>fp:</b> archivo asociado</p>
+<p>Devuelve <b>0</b> si no hubo error, si hubo un error distinto de <b>0</b></p>
+<p><b>fputc</b> devuelve el carácter si exitosa, <b>EOF</b> si error</p>
+</div>
+
 </div>
 
 
 <h2>LECTURA/ESCRITURA DE STRING</h2>
 
-<pre class="line-numbers"><code class="language-c">int fputs(char *str,FILE * fp)</code></pre>
+<div class="op-grid no-img">
+
+<div>
+<pre><code class="language-c">int fputs(char *str,FILE * fp)</code></pre>
 <p><b>fp:</b> archivo asociado</p>
 <p><b>str:</b> string en donde se ubica la cadena a escribir.</p>
-<p><b>fputs</b> devuelve <b>EOF</b> si error, en caso contrario distinto de 0</p>
+<p><b>fputs</b> devuelve <b>EOF</b> si error, en caso contrario distinto de <b>0</b></p>
+</div>
 
-<pre class="line-numbers"><code class="language-c">char *fgets(char *str,int num, FILE *fp)</code></pre>
+<div>
+<pre><code class="language-c">char *fgets(char *str,int num, FILE *fp)</code></pre>
 <p><b>fp:</b> archivo asociado</p>
 <p><b>num:</b> cantidad de caracteres a leer, hasta <b>'\n'</b> o <b>EOF</b></p>
 <p><b>str:</b> string en donde se ubica la cadena a leer.</p>
 <p><b>fgets</b> devuelve <b>str</b> si es correcta, en caso contrario <b>NULL</b></p>
+</div>
+
+</div>
 
 <h2>ENTRADA Y SALIDA CON FORMATO</h2>
-<pre class="line-numbers"><code class="language-c">int fprintf(FILE *fp, char *control, ………………);</code></pre>
+
+<div class="op-grid no-img">
+
+<div>
+<pre><code class="language-c">int fprintf(FILE *fp, char *control, ………………);</code></pre>
 <p><b>fp:</b> archivo asociado</p>
 <p><b>control:</b> cadena de control</p>
 <p><b>………………….:</b> lista de variables</p>
 <p>Devuelve la cantidad de ítems escritos, si hubo error <b>EOF</b></p>
+</div>
 
-<pre class="line-numbers"><code class="language-c">int fscanf(FILE *fp, char *control, ………………);</code></pre>
+<div>
+<pre><code class="language-c">int fscanf(FILE *fp, char *control, ………………);</code></pre>
 <p><b>fp:</b> archivo asociado</p>
 <p><b>control:</b> cadena de control</p>
 <p><b>………………….:</b> lista de variables</p>
 <p>Devuelve la cantidad de ítems leidos, si hubo error <b>EOF</b></p>
+</div>
 
-
+</div>
 
 <h2>LECTURA/ESCRITURA DE BLOQUES</h2>
 
-<pre class="line-numbers"><code class="language-c">size_t fwrite(void *buf, size_t size, size_t n, FILE *fp);</code></pre>
-<p>Escribe un bloque</p>
+<pre><code class="language-c">size_t fwrite(void *buf, size_t size, size_t n, FILE *fp);</code></pre>
+<p><b>Escribe un bloque</b></p>
 
-<pre class="line-numbers"><code class="language-c">size_t fread(void * buf, size_t size, size_t n, FILE * fp);</code></pre>
-<p>Lee un bloque</p>
-
+<pre><code class="language-c">size_t fread(void * buf, size_t size, size_t n, FILE * fp);</code></pre>
+<p><b>Lee un bloque</b></p>
+<div>
 <p><b>buf:</b> puntero al bloque</p>
 <p><b>size:</b> tamaño del bloque</p>
 <p><b>n:</b> cantidad de bloques</p>
 <p><b>fp: archivo asociado</b></p>
 <p><b>size_t:</b> unsigned int</p>
-<p>Devuelve la cantidad de bloques, si hubo error un numero &lt; n</p>
+<p>Devuelve la cantidad de bloques, si hubo error un numero <b>&lt; n</b>.</p>
+</div>
 
 
 
 <h2>DESPLAZAMIENTO</h2>
 
-<pre class="line-numbers"><code class="language-c">int fseek(FILE *fp, long d, int origen);</code></pre>
+<div class="op-grid no-img">
+
+<div>
+<pre><code class="language-c">int fseek(FILE *fp, long d, int origen);</code></pre>
 <p><b>fp:</b> archivo asociado</p>
 <p><b>d:</b> desplazamiento</p>
 <p><b>origen:</b> posición de inicio del desplazamiento</p>
-<p>Devuelve 0 si no hubo error, si hubo error distinto de cero</p>
+<p>Devuelve <b>0</b> si no hubo error, si hubo error distinto de cero</p>
+</div>
+
+</div>
 
 <div class="tablecontainer">
 <table>
@@ -252,32 +268,54 @@ FILE *fopen(char *nombre,char *modo)
 
 <h2>DESPLAZAMIENTO</h2>
 
-<pre class="line-numbers"><code class="language-c">long ftell(FILE *fp);</code></pre>
+<div class="op-grid no-img">
+
+<div>
+<pre><code class="language-c">long ftell(FILE *fp);</code></pre>
 <p><b>fp:</b> archivo asociado</p>
 <p>Devuelve la posición actual del archivo en bytes, si hubo error <b>-1L</b></p>
+</div>
+
+</div>
 
 <h2>BORRAR UN ARCHIVO</h2>
 
-<pre class="line-numbers"><code class="language-c">int remove(char *nombre);</code></pre>
-<p><b>nombre:</b> unidad, ruta, nombre y extensión del archivo</p>
-<p>Devuelve 0 si hubo éxito, si hubo error distinto de 0</p>
+<div class="op-grid no-img">
 
+<div>
+<pre><code class="language-c">int remove(char *nombre);</code></pre>
+<p><b>nombre:</b> unidad, ruta, nombre y extensión del archivo</p>
+<p>Devuelve <b>0</b> si hubo éxito, si hubo error <b>distinto de 0</b></p>
+</div>
+
+</div>
 
 
 <h2>RETORNA AL COMIENZO</h2>
 
-<pre class="line-numbers"><code class="language-c">void rewind(FILE *fp);</code></pre>
+<div class="op-grid no-img">
+
+<div>
+<pre><code class="language-c">void rewind(FILE *fp);</code></pre>
 <p><b>fp:</b> archivo asociado</p>
+</div>
+
+</div>
 
 <h2>LIBERAR EL BUFFER</h2>
 
-<pre class="line-numbers"><code class="language-c">int fflush(FILE *fp);</code></pre>
+<div class="op-grid no-img">
+
+<div>
+<pre><code class="language-c">int fflush(FILE *fp);</code></pre>
 <p><b>fp:</b> archivo asociado</p>
-<p>Devuelve 0 si hubo exito, si hubo error <b>EOF</b></p>
+<p>Devuelve <b>0</b> si hubo exito, si hubo error <b>EOF</b></p>
+</div>
+
+</div>
 
 
-
-<h2>ESTRUCTURA FILE</h2>
+<h1>ESTRUCTURA FILE</h1>
 
 <div class="tablecontainer">
 <table>
@@ -319,13 +357,17 @@ FILE *fopen(char *nombre,char *modo)
     </tr>
 </table>
 </div>
-
-<script src="js/prism.js"></script>
+</div>
+</main>
 
 <footer class="footer-nav">
+  <div class="container">
   <a href="union.html" class="btn">Anterior</a>
   <a href="memoria.html" class="btn">Siguiente</a>
+  </div>
 </footer>
+
+<script src="js/prism.js"></script>
 
 </body>
 </html>

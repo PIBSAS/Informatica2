@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista simple</title>
   <meta name="author" content="Ing. Osvaldo M. Pini"/>
   <meta name="created" content="2020-04-25T19:45:56"/>
@@ -11,6 +11,9 @@
 </head>
 
 <body>
+<main>
+
+<div class="container">
 
 <h1>LISTA SIMPLE</h1>
 
@@ -23,13 +26,13 @@
 
 
 <p>Debemos colocar un indicador al principio de los datos, esto lo debemos realizar mediante un puntero a estructura.</p>
-<p>El puntero al comienzo, debe apuntar a un valor NULL, que indica que la lista está vacía.</p>
-<img src="img/0040.png" alt="Lista simple">
-<p>Cuando se genera el primer conjunto de datos el puntero de comienzo debe apuntar a este conjunto y el puntero del dato deberá apuntar a NULL</p>
+<p>El puntero al comienzo, debe apuntar a un valor <b>NULL</b>, que indica que la lista está vacía.</p>
+<img class="img-diagrama" src="img/0040.png" alt="NULL">
+<p>Cuando se genera el primer conjunto de datos el puntero de comienzo debe apuntar a este conjunto y el puntero del dato deberá apuntar a <b>NULL</b></p>
 
 
 
-<img src="img/0041.png" alt="">
+<img class="img-diagrama" src="img/0041.png" alt="Dato 1">
 
 <p>La ubicación de los datos puede hacerse ordenada según una determinada llave.</p>
 <p>Este método me permite insertar cada conjunto de datos en el lugar adecuado según el orden deseado.</p>
@@ -40,31 +43,32 @@
 <li><b>Insertar como último elemento</b></li>
 <li><b>Insertar como un elemento intermedio</b></li>
 </ul>
-<p>Siempre que la lista esté vacía el puntero de comienzo estará apuntando a NULL</p>
+<p>Siempre que la lista esté vacía el puntero de comienzo estará apuntando a <b>NULL</b></p>
 
 
 
 <h2>Como nuevo primer elemento</h2>
+
 <p>Cuando sucede que el nuevo elemento debe ser el primer elemento el indicador de principio deberá apuntar a este nuevo elemento y el indicador del elemento siguiente en el nuevo deberá apuntar al elemento que era el primero</p>
-<img src="img/0042.png" alt="Primer elemento">
+<img class="img-diagrama" src="img/0042.png" alt="Primer elemento">
 
 
 
 <h2>Como elemento intermedio</h2>
 <p>Esta ubicación es entre dos elementos existentes, entonces se debe cambiar el enlace del elemento anterior hacia el nuevo y el enlace del nuevo apuntará al posterior.</p>
-<img src="img/0043.png" alt="Elementop intermedio">
+<img class="img-diagrama" src="img/0043.png" alt="Elementop intermedio">
 
 
 
 <h2>Como último elemento</h2>
 
-<p>El elemento a ser insertado debe ubicarse al final de la lista, por lo tanto el puntero siguiente del elemento final debe ahora apuntar al nuevo elemento y el puntero siguiente del nuevo debe apuntar a NULL.</p>
-<img src="img/0044.png" alt="Último elemento">
+<p>El elemento a ser insertado debe ubicarse al final de la lista, por lo tanto el puntero siguiente del elemento final debe ahora apuntar al nuevo elemento y el puntero siguiente del nuevo debe apuntar a <b>NULL</b>.</p>
+<img class="img-diagrama" src="img/0044.png" alt="Último elemento">
 
 
 
-<p>Para leer los elementos de la lista se debe comenzar desde el indicador de comienzo y luego de presentar los datos, solo se debe actualizar el puntero con el valor del puntero siguiente de la estructura hasta llegar a encontrar el valor NULL.</p>
-<p>Para buscar un determinado valor en la lista se debe hacer en forma secuencial por lo que hay que comenzar desde le valor que indica el puntero de comienzo hasta encontrar el valor deseado o hasta encontrar el NULL, que indicaría que no se ha encontrado el valor buscado</p>
+<p>Para leer los elementos de la lista se debe comenzar desde el indicador de comienzo y luego de presentar los datos, solo se debe actualizar el puntero con el valor del puntero siguiente de la estructura hasta llegar a encontrar el valor <b>NULL</b>.</p>
+<p>Para buscar un determinado valor en la lista se debe hacer en forma secuencial por lo que hay que comenzar desde le valor que indica el puntero de comienzo hasta encontrar el valor deseado o hasta encontrar el <b>NULL</b>, que indicaría que no se ha encontrado el valor buscado</p>
 <p>Para borrar un elemento encontrado en la lista pueden ocurrir tres casos:</p>
 <ul>
 <li><b>Borrar el primer elemento</b></li>
@@ -77,23 +81,23 @@
 <h2>Borrar el  elemento</h2>
 <p>Se debe cambiar el puntero de comienzo a la dirección del segundo elemento</p>
 <p>Luego se debe proceder a liberar la memoria del elemento borrado</p>
-<img src="img/0045.png" alt="Borrar elemento">
+<img class="img-diagrama" src="img/0045.png" alt="Borrar elemento">
 
 
 
 <h2>Borrar un elemento intermedio</h2>
 <p>Para un elemento intermedio se debe hacer que el puntero siguiente del elemento anterior apunte al elemento siguiente al que será borrado y luego liberar la memoria de este</p>
-<img src="img/0046.png" alt="Borrar elemento intermedio">
+<img class="img-diagrama" src="img/0046.png" alt="Borrar elemento intermedio">
 
 
 
-<h2>Borrar el último elemento<h2>
-<p>El puntero siguiente del elemento anterior debe apuntar a NULL y luego liberar la memoria del elemento a borrar.</p>
-<img src="img/0047.png" alt="Borrar último elemento">
+<h2>Borrar el último elemento</h2>
+
+<p>El puntero siguiente del elemento anterior debe apuntar a <b>NULL</b> y luego liberar la memoria del elemento a borrar.</p>
+<img  class="img-diagrama" src="img/0047.png" alt="Borrar último elemento">
 
 
-
-<h1>AGREGAR ELEMENTO</h1>
+<h2>AGREGAR ELEMENTO</h2>
 
 <pre class="line-numbers"><code class="language-c">void ingresa(struct lis **p)
 {
@@ -112,9 +116,7 @@ while(act-&gt;sig)
   act-&gt;sig=aux;
 }
 </code></pre>
-<img src="img/0048.png" alt="Agregar elemento">
-
-
+<img class="img-diagrama" src="img/0048.png" alt="Agregar elemento">
 
 <h2>INSERTAR PRIMER ELEMENTO</h2>
 
@@ -140,11 +142,10 @@ if(ant==act){
 ele_int();
 }
 </code></pre>
-<img src="img/0049.png" alt="Insertar primer elemento">
-
-
+<img class="img-diagrama" src="img/0049.png" alt="Insertar primer elemento">
 
 <h2>INSERTAR ELEMENTO INTERMEDIO</h2>
+
 <pre class="line-numbers"><code class="language-c">
 void ingresa(struct lis **p)
 {
@@ -165,9 +166,7 @@ ant-&gt;sig=aux;
 aux-&gt;sig=act;
 }
 </code></pre>
-<img src="img/0050.png" alt="Insertar elemento intermedio">
-
-
+<img class="img-diagrama" src="img/0050.png" alt="Insertar elemento intermedio">
 
 <h2>INSERTAR ULTIMO ELEMENTO</h2>
 <pre class="line-numbers"><code class="language-c">
@@ -191,9 +190,7 @@ if(ant==act)
 el_in();
 }
 </code></pre>
-<img src="img/0051.png" alt="Insertar último elemento">
-
-
+<img class="img-diagrama" src="img/0051.png" alt="Insertar último elemento">
 
 <h2>BORRAR PRIMER ELEMENTO</h2>
 
@@ -221,7 +218,7 @@ if(aux){
 printf(&quot;\nDatos no existen&quot;);
 }
 </code></pre>
-<img src="img/0052.png" alt="Borrar primer elemento">
+<img class="img-diagrama" src="img/0052.png" alt="Borrar primer elemento">
 
 
 <h2>BORRAR ELEMENTO INTERMEDIO</h2>
@@ -251,7 +248,7 @@ if(aux){
 printf(&quot;\nDatos no existen&quot;);
 }
 </code></pre>
-<img src="img/0053.png" alt="Borrar elemento intermedio">
+<img class="img-diagrama" src="img/0053.png" alt="Borrar elemento intermedio">
 
 
 
@@ -283,14 +280,18 @@ return;}
 printf(&quot;\nDatos no existen&quot;);
 }
 </code></pre>
-<img src="img/0054.png" alt="Borrar último elemento">
-
-<script src="js/prism.js"></script>
+<img class="img-diagrama" src="img/0054.png" alt="Borrar último elemento">
+</div>
+</main>
 
 <footer class="footer-nav">
+  <div class="container">
   <a href="estructura.html" class="btn">Anterior</a>
   <a href="index.html" class="btn">Página principal</a>
+  </div>
 </footer>
+
+<script src="js/prism.js"></script>
 
 </body>
 </html>

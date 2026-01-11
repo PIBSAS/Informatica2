@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Informática II</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/prism.css">
@@ -10,10 +11,13 @@
 <body>
 
 <header>
+<div class="container">
   <h1>Unidad 1 – Informática II</h1>
+</div>
 </header>
 
 <main>
+  <div class="container">
   <h1>TEMA 1</h1>
   
   <h2>PUNTEROS</h2>
@@ -29,10 +33,10 @@
     </p>
 
     <h3>Sintaxis</h3>
-    <code>tipo asociado* nombre puntero;</code>
-    <code>int * punt;</code>
+    <pre><code class="language-c">tipo asociado* nombre puntero;</code></pre>
+    <pre><code class="language-c">int * punt;</code></pre>
     <p>
-      En este ejemplo se declara a la variable <i>punt</i> como un puntero que está asociado al tipo de dato <i>int</i>, es decir que <i>punt</i> es un puntero a entero.
+      En este ejemplo se declara a la variable <i><b>punt</b></i> como un puntero que está asociado al tipo de dato <i><b>int</b></i>, es decir que <i><b>punt</b></i> es un <b>puntero a entero</b>.
     </p>
     
     <h3>Tamaño de los punteros</h3>
@@ -53,17 +57,16 @@
     <p>
       Este operador permite poder obtener la dirección de una variable.
     </p>
-    <pre class="line-numbers"><code class="language-c">
-    int a;
-    int *pi;
-    pi=&amp;a;
-    </code></pre>
+<pre><code class="language-c">
+int a;
+int *pi;
+pi=&amp;a;
+</code></pre>
     <p>
       En este caso, el puntero <b>pi</b> guardará la dirección de comienzo de la variable <b>a</b>.
     </p>
-    <h5>Ejemplo</h5>
-    <pre class="line-numbers">
-      <code>
+    <h3>Ejemplo:</h3>
+<pre class="line-numbers"><code class="language-c">
 //-------------------------------------------------------------------
 #include<stdio.h>
 //-------------------------------------------------------------------
@@ -78,8 +81,8 @@ int main(void)
   return 0;
 }
 //------------------------------------------------------------------
-</code>
-    </pre>
+</code></pre>
+
     <p>
         Se puede observar cómo se obtiene la dirección de una variable utilizando tanto el operador 
         de direccionamiento como un puntero.
@@ -87,8 +90,8 @@ int main(void)
         se debe utilizar el especificador de formato %p.
     </p>
 
-    <h5>Ejemplo</h5>
-    <pre class="line-numbers"><code class="language-c">
+    <h3>Ejemplo:</h3>
+<pre class="line-numbers"><code class="language-c">
 //-------------------------------------------------------------------
 #include<stdio.h>
 //-------------------------------------------------------------------
@@ -111,24 +114,23 @@ int main(void)
       En este programa se muestra cómo un puntero apunta a una variable y cómo se puede acceder al valor almacenado en ella utilizando un puntero.
     </p>
 
-    <h4>Operador de indirección (*)</h4>
+    <h2>Operador de indirección (*)</h2>
     <p>
       Este operador permite acceder al contenido de la memoria que es apuntada por el puntero.
     </p>
-    <pre class="line-numbers">
-      <code>
-    int a,*pi;
-    pi=&amp;a;
-    *pi=4;
-      </code></main>pre>
+<pre><code class="language-c">
+int a,*pi;
+pi=&amp;a;
+*pi=4;
+</code></pre>
       <p>
         Vemos que el puntero pi apunta a la variable a, Al acceder de este modo al contenido de la 
 memoria, se escribió en esa dirección el valor 4, modificando indirectamente el valor de la 
 variable a.
       </p>
-      <h5>Ejemplo</h5>
-      <pre class="line-numbers"><code class="language-c">
-      //-------------------------------------------------------------------
+      <h3>Ejemplo:</h3>
+<pre class="line-numbers"><code class="language-c">
+//-------------------------------------------------------------------
 #include<stdio.h>
 //-------------------------------------------------------------------
 int main(void)
@@ -163,13 +165,13 @@ printf(“El contenido de pf es: %p\n”,pf);
 return 0;
 }
 //------------------------------------------------------------------  
-      </code></pre>  
+</code></pre>  
         <p>
           Aquí comprobamos cómo se pueden apuntar los punteros a diferentes variables y posiciones de memoria.
         </p>
 
-        <h5>Ejemplo</h5>
-        <pre class="line-numbers"><code class="language-c">
+        <h3>Ejemplo:</h3>
+<pre class="line-numbers"><code class="language-c">
 //-------------------------------------------------------------------
 #include<stdio.h>
 //-------------------------------------------------------------------
@@ -201,15 +203,15 @@ printf(“\n\n”);
 return 0;
 }
 //-------------------------------------------------------------------
-      </code></pre>
+</code></pre>
      <p>
       En este ejemplo observamos cómo se van incrementando los punteros y permiten recorrer la 
       memoria y ver su contenido.
      </p>
 
-     <h3>Operaciones que admiten los punteros</h3>
+     <h2>Operaciones que admiten los punteros</h2>
 
-     <h4>Asignación</h4>
+     <h3>Asignación</h3>
 
      <p>
       A un puntero se le puede asignar un valor entero: el significado es una dirección de memoria.
@@ -218,24 +220,24 @@ entre una posición y la siguiente, la distancia que los separa es uno (1). Esto
 El operador que se utiliza es el de asignación (=).
      </p>
 
-     <pre class="line-numbers"><code class="language-c">
-    int *pi;
-    pi=0xA7B4CEF9;
-     </code></pre>
-     <img src="img/" alt="Operador de asignación">
+<pre><code class="language-c">
+int *pi;
+pi=0xA7B4CEF9;
+</code></pre>
+     <img class="img-center" src="img/" alt="Operador de asignación">
      <p>
       En este caso se le asigna un valor numérico entero.
 También admiten la asignación de la dirección de una variable. Para realizar esta operación 
 se utiliza el operador de direccionamiento (&).
      </p>
-     <pre class="line-numbers"><code class="language-c">
-    int a;
-    pi=&amp;a;
-     </code></pre>
-     <img src="img/" alt="Operador de direccionamiento">
+<pre><code class="language-c">
+int a;
+pi=&amp;a;
+</code></pre>
+     <img class="img-center" src="img/" alt="Operador de direccionamiento">
 
-     <h5>Ejemplo</h5>
-     <pre class="line-numbers"><code class="language-c">
+     <h3>Ejemplo:</h3>
+<pre class="line-numbers"><code class="language-c">
 //-------------------------------------------------------------------
 #include<stdio.h>
 //-------------------------------------------------------------------
@@ -254,7 +256,7 @@ puntero */
 return 0; 
 }
 //-------------------------------------------------------------------
-     </code></pre>
+</code></pre>
 
      <p>
       Se observa en el ejemplo cómo se puede acceder al contenido de una variable utilizando un 
@@ -264,25 +266,28 @@ puntero, ya sea para escribir en la variable como para leerla.
       Otro valor que se le puede asignar a un puntero es otro puntero. Como es general en C, a toda 
 variable de un determinado tipo se le puede asignar otra variable del mismo tipo.
      </p>
-     <img src="img/" alt="Reasignación de variable">
-     <pre class="line-numbers"><code class="language-c">
+     <img class="img-center" src="img/" alt="Reasignación de variable">
+<pre><code class="language-c">
 int *pj,*pi;
 pj=0xF39B6246; 
 pj=pi;
-     </code></pre>
+</code></pre>
      <p>
       Hay que tener en cuenta que cuando se declara un puntero hay que inicializarlo, ya que el 
 valor que contiene luego de la declaración es basura. En este caso se dice que el puntero está 
 descontrolado, y pueden cometerse errores muy peligrosos en el caso de utilizarlo.
      </p>
      QUEDO EN PAGINA 12
+</div>
 </main>
 
-<script src="js/prism.js"></script>
-
 <footer class="footer-nav">
-  <a href="punteros.html" class="btn">Siguiente</a>
+  <div class="container">
+  <a href="punteros.html" class="btn next">Siguiente</a>
+  </div>
 </footer>
+
+<script src="js/prism.js"></script>
 
 </body>
 </html>
