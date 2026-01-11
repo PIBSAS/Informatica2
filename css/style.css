@@ -1,1 +1,159 @@
-
+html {
+	font-size: 16px;
+}
+body {
+	background-color: #FFF8DB;
+	font-family: Arial, sans-serif;
+}
+h1 {
+	text-align: center;
+	font-size: 2.5rem;
+	background-color:rgb(255, 240, 200);
+	border:2px solid;
+	border-radius: 10px;
+}
+h2 {
+	font-size: 1.875rem;
+}
+h3 {
+	font-size: 1.3125rem;
+}
+h4 {
+	font-size: 0.875rem;
+}
+h5 {
+	font-size: 0.4375rem;
+}
+h6 {
+	font-size: 0.25rem;
+}
+p {
+	color: #1A1400;
+	text-align: left;
+	font-size: 1rem;
+}
+div.tablecontainer {
+  overflow-x: auto;
+}
+table {
+	font-family: Arial, Helvetica, sans.serif;
+	border-collapse: collapse;
+	width: 100%
+}
+td, th {
+	border: 1px solid #dddddd;
+	padding: 8px;
+}
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+tr:hover {
+	background-color: #dddddd;
+}
+th {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	text-align: left;
+	background-color: #04AA6D;
+	color: white;
+}
+img {
+	
+}
+* {
+	box-sizing: border-box;
+}
+.box {
+	float: left;
+	min-width: 0;
+	width: 50%;
+	padding: 3.125rem;
+	height: 18.75rem;
+}
+@media (max-width: 480px) {
+  .box {
+    float: none;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+}
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+.op-grid {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 1.5rem;
+}
+.op-grid.no-img {
+  grid-template-columns: 1fr;
+}
+.op-img {
+  grid-row: span 4;
+}
+.op-img img {
+	max-width: 100%;
+	display: block;
+}
+.op-code pre {
+	margin: 0;
+}
+.op-code-img {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 1rem;
+	align-items: center;
+}
+.op-code-img img {
+	max-width: 100%;
+}
+.op-empty {
+}
+.op-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.op-row pre {
+  margin: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  min-width: 0;
+}
+.op-row img {
+  max-width: 100%;
+  height: auto;
+}
+.img-diagrama {
+  display: block;
+  margin: 1rem auto;
+  max-width: min(90vw, 900px);
+}
+.img-center {
+  display: block;
+  margin: 0 auto;
+}
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+.footer-nav .btn {
+  padding: 0.5rem 1.2rem;
+  background-color: #04AA6D;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.footer-nav .btn:hover {
+  background-color: #038a5a;
+}

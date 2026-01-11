@@ -1,8 +1,7 @@
-
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-
+  <meta charset="UTF-8">
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <title>Memoria dinámica</title>
   <meta name="author" content="Ing. Osvaldo M. Pini"/>
@@ -13,6 +12,8 @@
   <meta name="Company" content="Hewlett-Packard"/>
   <meta name="PresentationFormat" content="Presentación en pantalla (4:3)"/>
   <meta name="Slides" content="6"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prism.css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
 <h2>Asignación dinámica de memoria</b></u></p>
 
 <p>El compilador divide a la memoria en tres zonas</p>
-<img src="img/0034.png" alt="Memoria">
+<img class="img-center" src="img/0034.png" alt="Memoria">
 
 <p>Estática: donde se ubica el código, las variables globales.</p>
 
@@ -44,9 +45,9 @@
 
 <p>Asignar memoria libre para la cantidad de espacio requerido.</p>
 
-<p>Prototipo</p>
+<h3>Prototipo</h3>
 
-<pre><code>void *malloc(unsigned int tamaño_requerido);</code></pre>
+<pre class="line-numbers"><code class="language-c">void *malloc(unsigned int tamaño_requerido);</code></pre>
 
 <p><b>tamaño_requerido:</b> cantidad de bytes solicitados</p>
 
@@ -60,9 +61,9 @@
 
 <p>Libera un bloque de memoria pedido por la función malloc().</p>
 
-<p>Prototipo</p>
+<h3>Prototipo</h3>
 
-<pre><code>void free(void *bloque_pedido);</code></pre>
+<pre class="line-numbers"><code class="language-c">void free(void *bloque_pedido);</code></pre>
 
 <p><b>bloque_pedido:</b> dirección del bloque de memoria solicitado.</p>
 
@@ -74,12 +75,18 @@
 
 <h3>Sintaxis</h3>
 
-<pre><code>sizeof &lt;expresión&gt;</code></pre>
+<pre class="line-numbers"><code class="language-c">sizeof &lt;expresión&gt;</code></pre>
 
 <p>O</p>
 
-<pre><code>sizeof ( &lt;tipo&gt; )</code></pre>
+<pre class="line-numbers"><code class="language-c">sizeof ( &lt;tipo&gt; )</code></pre>
+
+<script src="js/prism.js"></script>
+
+<footer class="footer-nav">
+  <a href="archivos.html" class="btn">Anterior</a>
+  <a href="estructura.html" class="btn">Siguiente</a>
+</footer>
 
 </body>
-
 </html>

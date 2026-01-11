@@ -1,12 +1,13 @@
-
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-
+  <meta charset="UTF-8">
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <title>Lista simple</title>
   <meta name="author" content="Ing. Osvaldo M. Pini"/>
   <meta name="created" content="2020-04-25T19:45:56"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prism.css">
 </head>
 
 <body>
@@ -94,7 +95,7 @@
 
 <h1>AGREGAR ELEMENTO</h1>
 
-<pre><code>void ingresa(struct lis **p)
+<pre class="line-numbers"><code class="language-c">void ingresa(struct lis **p)
 {
 struct lis *act,*aux;
 act=*p;
@@ -117,7 +118,7 @@ while(act-&gt;sig)
 
 <h2>INSERTAR PRIMER ELEMENTO</h2>
 
-<pre><code>void ingresa(struct lis **p)
+<pre class="line-numbers"><code class="language-c">void ingresa(struct lis **p)
 {
 struct lis *act,*aux,*ant;
 aux=(struct lis *)malloc(sizeof(struct lis));
@@ -144,7 +145,7 @@ ele_int();
 
 
 <h2>INSERTAR ELEMENTO INTERMEDIO</h2>
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 void ingresa(struct lis **p)
 {
 struct lis *act,*aux,*ant;
@@ -169,7 +170,7 @@ aux-&gt;sig=act;
 
 
 <h2>INSERTAR ULTIMO ELEMENTO</h2>
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 void ingresa(struct lis **p)
 {
 struct lis *act,*aux,*ant;
@@ -196,7 +197,7 @@ el_in();
 
 <h2>BORRAR PRIMER ELEMENTO</h2>
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 void borra(struct lis **p)
 {
 struct lis *aux,*ant;
@@ -225,7 +226,7 @@ printf(&quot;\nDatos no existen&quot;);
 
 <h2>BORRAR ELEMENTO INTERMEDIO</h2>
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 void borra(struct lis **p)
 {
 struct lis *aux,*ant;
@@ -256,7 +257,7 @@ printf(&quot;\nDatos no existen&quot;);
 
 <h2>BORRAR ULTIMO ELEMENTO</h2>
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 void borra(struct lis **p)
 {
 struct lis *aux,*ant;
@@ -283,6 +284,13 @@ printf(&quot;\nDatos no existen&quot;);
 }
 </code></pre>
 <img src="img/0054.png" alt="Borrar último elemento">
+
+<script src="js/prism.js"></script>
+
+<footer class="footer-nav">
+  <a href="estructura.html" class="btn">Anterior</a>
+  <a href="index.html" class="btn">Página principal</a>
+</footer>
 
 </body>
 </html>

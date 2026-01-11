@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Informática II</title>
-
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prism.css">
   <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -53,7 +53,7 @@
     <p>
       Este operador permite poder obtener la dirección de una variable.
     </p>
-    <pre><code>
+    <pre class="line-numbers"><code class="language-c">
     int a;
     int *pi;
     pi=&amp;a;
@@ -62,7 +62,7 @@
       En este caso, el puntero <b>pi</b> guardará la dirección de comienzo de la variable <b>a</b>.
     </p>
     <h5>Ejemplo</h5>
-    <pre>
+    <pre class="line-numbers">
       <code>
 //-------------------------------------------------------------------
 #include<stdio.h>
@@ -88,7 +88,7 @@ int main(void)
     </p>
 
     <h5>Ejemplo</h5>
-    <pre><code>
+    <pre class="line-numbers"><code class="language-c">
 //-------------------------------------------------------------------
 #include<stdio.h>
 //-------------------------------------------------------------------
@@ -115,7 +115,7 @@ int main(void)
     <p>
       Este operador permite acceder al contenido de la memoria que es apuntada por el puntero.
     </p>
-    <pre>
+    <pre class="line-numbers">
       <code>
     int a,*pi;
     pi=&amp;a;
@@ -127,7 +127,7 @@ memoria, se escribió en esa dirección el valor 4, modificando indirectamente e
 variable a.
       </p>
       <h5>Ejemplo</h5>
-      <pre><code>
+      <pre class="line-numbers"><code class="language-c">
       //-------------------------------------------------------------------
 #include<stdio.h>
 //-------------------------------------------------------------------
@@ -169,7 +169,7 @@ return 0;
         </p>
 
         <h5>Ejemplo</h5>
-        <pre><code>
+        <pre class="line-numbers"><code class="language-c">
 //-------------------------------------------------------------------
 #include<stdio.h>
 //-------------------------------------------------------------------
@@ -218,7 +218,7 @@ entre una posición y la siguiente, la distancia que los separa es uno (1). Esto
 El operador que se utiliza es el de asignación (=).
      </p>
 
-     <pre><code>
+     <pre class="line-numbers"><code class="language-c">
     int *pi;
     pi=0xA7B4CEF9;
      </code></pre>
@@ -228,14 +228,14 @@ El operador que se utiliza es el de asignación (=).
 También admiten la asignación de la dirección de una variable. Para realizar esta operación 
 se utiliza el operador de direccionamiento (&).
      </p>
-     <pre><code>
+     <pre class="line-numbers"><code class="language-c">
     int a;
     pi=&amp;a;
      </code></pre>
      <img src="img/" alt="Operador de direccionamiento">
 
      <h5>Ejemplo</h5>
-     <pre><code>
+     <pre class="line-numbers"><code class="language-c">
 //-------------------------------------------------------------------
 #include<stdio.h>
 //-------------------------------------------------------------------
@@ -265,7 +265,7 @@ puntero, ya sea para escribir en la variable como para leerla.
 variable de un determinado tipo se le puede asignar otra variable del mismo tipo.
      </p>
      <img src="img/" alt="Reasignación de variable">
-     <pre><code>
+     <pre class="line-numbers"><code class="language-c">
 int *pj,*pi;
 pj=0xF39B6246; 
 pj=pi;
@@ -278,8 +278,10 @@ descontrolado, y pueden cometerse errores muy peligrosos en el caso de utilizarl
      QUEDO EN PAGINA 12
 </main>
 
-<footer>
-  <a href="../index.html">⬅ Volver</a>
+<script src="js/prism.js"></script>
+
+<footer class="footer-nav">
+  <a href="punteros.html" class="btn">Siguiente</a>
 </footer>
 
 </body>

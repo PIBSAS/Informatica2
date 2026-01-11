@@ -1,8 +1,7 @@
-
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-
+  <meta charset="UTF-8">
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <title>PUNTEROS</title>
   <meta name="author" content="Ing. Osvaldo M. Pini"/>
@@ -14,6 +13,8 @@
   <meta name="Notes" content="1"/>
   <meta name="PresentationFormat" content="Presentación en pantalla (4:3)"/>
   <meta name="Slides" content="33"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prism.css">
 </head>
 <body>
 
@@ -23,7 +24,7 @@
 
 <p>Esto quiere decir que un puntero apunta a una determinada ubicación en la memoria.</p>
 
-<img src="img/0001.png" alt="Ubicación en memoria">
+<img class="img-center" src="img/0001.png" alt="Ubicación en memoria">
 
 
 
@@ -35,10 +36,10 @@
 
 <h2>SINTAXIS:</h2>
 
-<pre><code>tipo asociado * nombre puntero;</code></pre>
-<pre><code>int * punt;</code></pre>
+<pre><code class="language-c">tipo asociado * nombre puntero;</code></pre>
+<pre><code class="language-c">int * punt;</code></pre>
 
-<p><i>punt</i> es un puntero a entero.</p>
+<p><b><i>punt</i></b> es un puntero a entero.</p>
 
 
 
@@ -58,7 +59,7 @@
 
 <p>Este operador permite poder obtener la dirección de una variable.</p>
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 int a;
 int *pi;
 pi=&amp;a;
@@ -69,7 +70,7 @@ pi=&amp;a;
 
 <p>Este operador permite acceder al contenido de la memoria que es apuntada por el puntero.</p>
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 int a,*pi;
 pi=&amp;a;
 *pi=4;
@@ -83,7 +84,7 @@ pi=&amp;a;
 
 <p><b>Utilice el compilador, ejecuta paso a paso los siguientes programas</b></p>
 
-<code>Punt01.c</code>
+<pre><code class="language-c">Punt01.c</code></pre>
 
 
 
@@ -97,37 +98,37 @@ pi=&amp;a;
 
 
 
-<p>El operador que se utiliza es el de asignación (=).</p>
+<p>El operador que se utiliza es el de asignación <b>(=)</b>.</p>
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 int *pi;
 pi=0xA7B4CEF9;
 </code></pre>
 
-<img src="img/0002.png" alt="Operdaor de asignación">
+<img class="img-center" src="img/0002.png" alt="Operdaor de asignación">
 
 
 
-<p>También admiten la asignación de la dirección de una variable, para realizar esta operación se utiliza el operador de direccionamiento (&amp;).</p>
+<p>También admiten la asignación de la dirección de una variable, para realizar esta operación se utiliza el operador de direccionamiento <b>(&amp;)</b>.</p>
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 int a;
 pi=&amp;a;
 </code></pre>
 
-<img src="img/0003.png" alt="Operador de direccionamiento">
+<img class="img-center" src="img/0003.png" alt="Operador de direccionamiento">
 
 
 
-<p>Otro valor que se le puede asignar a un puntero es otro puntero, como es general en C a toda variable de un determinado tipo se le puede asignar otra variable del mismo tipo. </p>
+<p>Otro valor que se le puede asignar a un puntero es otro puntero, como es general en <b>C</b> a toda variable de un determinado tipo se le puede asignar otra variable del mismo tipo. </p>
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 int *pj,*pi;
 pj=0xF39B6246; 
 pi=pj;
 </code></pre>
 
-<img src="img/0004.png" alt="Reasignacion de puntero mediante variable">
+<img class="img-center" src="img/0004.png" alt="Reasignacion de puntero mediante variable">
 
 
 
@@ -139,7 +140,7 @@ pi=pj;
 
 <p><b>Utilice el compilador, ejecuta paso a paso los siguientes programas</b></p>
 
-<code>Punt02.c, Punt03.c,</code> <code>Punt04.c</code>.
+<pre><code class="language-c">Punt02.c, Punt03.c, Punt04.c</code></pre>.
 
 
 
@@ -147,7 +148,7 @@ pi=pj;
 
 <p>Admiten las operaciones de suma y resta.</p>
 
-<p>Se utilizan los operadores de adición (+) y sustracción (-).</p>
+<p>Se utilizan los operadores de adición <b>(+)</b> y sustracción <b>(-)</b>.</p>
 
 <p>Los valores que se le pueden adicionar o sustraer pueden ser enteros u otro puntero.</p>
 
@@ -183,13 +184,13 @@ pi=pj;
 
 <p><b>Utilice el compilador, ejecuta paso a paso los siguientes programas</b></p>
 
-<code>Punt05.c, Punt06.c, Punt07.c y</code> <code>Punt08.c</code>.
+<pre><code class="language-c">Punt05.c, Punt06.c, Punt07.c y Punt08.c</code></pre>
 
 
 
 <h2>COMPARACIÓN</h2>
 
-<p>Los punteros admiten las operaciones de comparación (&lt;,&gt;,==,!=,&lt;=,&gt;=)</p>
+<p>Los punteros admiten las operaciones de comparación (<b>&lt;</b>, <b>&gt;</b>, <b>==</b>, <b>!=</b>, <b>&lt;=</b>, <b>&gt;=</b>)</p>
 
 <p>Si un puntero es mayor que el otro esto indica que el mayor apunta a una dirección de memoria más alta que el otro</p>
 
@@ -205,11 +206,11 @@ pi=pj;
 
 <p><b>Utilice el compilador, ejecuta paso a paso los siguientes programas</b></p>
 
-<code>Punt09.c </code>y<code>Punt10.c</code>.
+<pre><code class="language-c">Punt09.c y Punt10.c</code></pre>
 
 
 
-<h2>PUNTEROS Y VECTORES</h2>
+<h1>PUNTEROS Y VECTORES</h1>
 
 <p>Si se declara un vector, el compilador reservara la cantidad de memoria necesaria para el mismo, comenzando desde la posición cero (0).</p>
 
@@ -235,7 +236,7 @@ pi=pj;
 
 <p><b>Utilice el compilador, ejecuta paso a paso los siguientes programas</b></p>
 
-<code>Punt11.c, Punt12.c, Punt13.c</code> y<code>Punt14.c</code>.
+<pre><code class="language-c">Punt11.c, Punt12.c, Punt13.c y Punt14.c</code></pre>
 
 
 
@@ -265,17 +266,17 @@ pi=pj;
 
 <p><b>Utilice el compilador, ejecuta paso a paso los siguientes programas</b></p>
 
-<code>Punt15.c </code>y<code>Punt16.c</code>.
+<pre><code class="language-c">Punt15.c y Punt16.c</code></pre>
 
 
 
 <h2>PUNTEROS A STRING</h2>
 
-<p>Un puntero a string no es más que un puntero a char</p>
+<p>Un puntero a string no es más que un puntero a <b>char</b></p>
 
-<p>Un string no es nada más que un vector de char</p>
+<p>Un string no es nada más que un vector de <b>char</b></p>
 
-<p>Tiene la característica de que está finalizado por el carácter “null”.</p>
+<p>Tiene la característica de que está finalizado por el carácter <b>"null"</b>.</p>
 
 <p>Son aplicables los mismos conceptos que para cualquier otro vector.</p>
 
@@ -301,7 +302,7 @@ pi=pj;
 
 <p>Una estructura es un tipo de dato definido por el usuario, y si después de definirlo se utiliza como tipo asociado de un puntero esto es totalmente valido.</p>
 
-<p>La estructura como sabemos es un tipo de dato que contiene campos, distintos tipos válidos, y se puede acceder a ellos mediante el operador de acceso a miembro (.).</p>
+<p>La estructura como sabemos es un tipo de dato que contiene campos, distintos tipos válidos, y se puede acceder a ellos mediante el operador de acceso a miembro <b>(.)</b>.</p>
 
 <p>Esto es válido cuando se utilizan punteros ya que si un puntero apunta a una variable de tipo estructura a través del operador de indirección se puede acceder a su contenido, pero como el contenido de esta son campos, se le debería agregar el operador de acceso a miembro.</p>
 
@@ -311,7 +312,7 @@ pi=pj;
 
 <p>Habría que tener en cuenta la precedencia de los operadores</p>
 
-<p>Para solucionar este inconveniente se utiliza un nuevo operador, que se denomina operador apuntador de estructura (-&gt;).</p>
+<p>Para solucionar este inconveniente se utiliza un nuevo operador, que se denomina operador apuntador de estructura (<b>-&gt;</b>).</p>
 
 <p>Este operador permite el acceso directo a los campos mediante la utilización de un puntero.</p>
 
@@ -323,13 +324,13 @@ pi=pj;
 
 <p>Para declararlo deberemos utilizar el operador de indirección dos veces y precedido por un tipo asociado.</p>
 
-<pre><code>
+<pre><code class="language-c">
 tipo asociado ** nombre;
 </code></pre>
-<pre><code>
+<pre><code class="language-c">
 float **pf;
 </code></pre>
-<p>pf es un puntero a puntero a float</p>
+<p><b>pf</b> es un puntero a puntero a <b>float</b></p>
 
 <p>El tamaño de un puntero a puntero es el mismo que el de un puntero, ya que va a almacenar una dirección de memoria.</p>
 
@@ -339,7 +340,7 @@ float **pf;
 
 <p><b>Utilice el compilador, ejecuta paso a paso los siguientes programas</b></p>
 
-<code>Punt17.c</code> y<code>Punt18.c</code>.
+<pre><code class="language-c">Punt17.c y Punt18.c</code></pre>
 
 
 
@@ -351,12 +352,12 @@ float **pf;
 
 <h2>DECLARACIÓN</h2>
 
-<pre><code>tipo asociado * nombre [tamaño];</code></pre>
-<pre><code>
+<pre><code class="language-c">tipo asociado * nombre [tamaño];</code></pre>
+<pre><code class="language-c">
 int * vec[10];
 </code></pre>
 
-<p><i>vec</i> es un vector de punteros a entero.</p>
+<p><b><i>vec</i></b> es un vector de punteros a entero.</p>
 
 
 
@@ -364,7 +365,14 @@ int * vec[10];
 
 <p><b>Utilice el compilador, ejecuta paso a paso los siguientes programas</b></p>
 
-<code>Punt19.c</code>
+<pre><code class="language-c">Punt19.c</code></pre>
+
+<script src="js/prism.js"></script>
+
+<footer class="footer-nav">
+  <a href="index.html" class="btn">Anterior</a>
+  <a href="recursividad.html" class="btn">Siguiente</a>
+</footer>
 
 </body>
 </html>

@@ -1,13 +1,14 @@
-
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-
+  <meta charset="UTF-8">
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <title>Estructura de datos</title>
   <meta name="author" content="Ing. Osvaldo M. Pini"/>
   <meta name="created" content="1999-07-22T18:46:53.060000000"/>
   <meta name="changed" content="2026-01-09T15:17:45.026083650"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prism.css">
   <script
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     defer>
@@ -94,7 +95,7 @@
 
 <p>Se creara una función de lectura y una de escritura.</p>
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 void Ingreso(int *Ing,int *Ext,float *Cola)
 {
 if(*Ing==MAX)
@@ -112,7 +113,7 @@ scanf(&quot;%f&quot;,&amp;Cola[*Ing]);
 <img src="img/0035.png" alt="Ingreso">
 
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 void Lee(int *Ing,int *Ext,float *Cola)
 {
 if(*Ing==*Ext)
@@ -157,7 +158,7 @@ printf(&quot;\nEl dato es : %f&quot;,Cola[*Ext]);
 <p>Otra que indique cola vacia</p>
 
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 void Ingre(int *Cola,int **Ing,int *Lle,int *Vac,int *Egr)
 {
 if(*Lle)
@@ -179,7 +180,7 @@ if(*Ing==Egr)
 <img src="img/0037.png" alt="Ingreso Egreso">
 
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 void Lee(int *Cola,int **Egr,int *Vac,int *Lle,int *Ing)
 {
 if(*Vac)
@@ -223,7 +224,7 @@ if(*Egr==Ing)
 <p>Se creara una función de lectura y una de escritura. </p>
 
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 void Ingresa(int *Indice,float *Pila)
 {
 if(*Indice==MAX)
@@ -241,7 +242,7 @@ scanf(&quot;%f&quot;,&amp;Pila[*Indice]);
 <img src="img/0039.png" alt="Ingreso stack">
 
 
-<pre><code>
+<pre class="line-numbers"><code class="language-c">
 void Lee(int *Indice,float *Pila)
 {
   if(!*Indice)
@@ -256,6 +257,13 @@ void Lee(int *Indice,float *Pila)
 }
 </code></pre>
 <img src="img/0039.png" alt="Lectura stack">
-</body>
 
+<script src="js/prism.js"></script>
+
+<footer class="footer-nav">
+  <a href="memoria.html" class="btn">Anterior</a>
+  <a href="lista.html" class="btn">Siguiente</a>
+</footer>
+
+</body>
 </html>
