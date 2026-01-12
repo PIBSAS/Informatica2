@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEMA 5</title>
+  <meta name="author" content="Ing. Osvaldo M. Pini"/>
+  <meta name="created" content="1999-04-15T21:05:52"/>
+  <meta name="changed" content="00:00:00"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prism.css">
+  
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Informática II</h1>
+    </div>
+</header>
+
+<main>
+  <div class="container">
+<h1>OPERADORES A NIVEL DE BIT</h1>
+
+<h3><b>AND ( &amp; )</h3>
+
+<div class="op-grid">
+
+	<div class="op-img">
+		<img src="img/0022.png" alt="Operador and">
+	</div>
+
+	<div class="op-code">
+		<pre class="line-numbers"><code class="language-c">char a,b,c;</code></pre>
+	</div>
+
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">a=0xaa;</code></pre>
+		<img src="img/0023.png" alt="a=0xaa">
+	</div>
+
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">b=0x55;</code></pre>
+		<img src="img/0024.png" alt="b=0x55">
+	</div>
+
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">c=a&amp;b;</code></pre>
+		<img src="img/0025.png" alt="C=a&b">
+	</div>
+</div>
+
+
+<h2>OR ( | )</h2>
+
+<div class="op-grid">
+
+	<div class="op-img">
+		<img src="img/0026.png" alt="Operador or">
+	</div>
+
+	<div class="op-code">
+		<pre class="line-numbers"><code class="language-c">char a,b,c;</code></pre>
+	</div>
+
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">a=0xaa;</code></pre>
+		<img src="img/0027.png" alt="a=0xaa">
+	</div>
+
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">b=0x55;</code></pre>
+		<img src="img/0028.png" alt="b=0x55">
+	</div>
+
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">c=a|b;></code></pre>
+		<img src="img/0029.png" alt="C=a&b">
+	</div>
+</div>
+
+
+<h2>XOR ( ^ )</h2>
+
+<div class="op-grid">
+	<div class="op-img">
+		<img src="img/0030.png" alt="Operador xor">
+	</div>
+
+	<div class="op-code">
+		<pre class="line-numbers"><code class="language-c">char a,b,c;</code></pre>
+	</div>
+	
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">a=0xaa;</code></pre>
+		<img src="img/0027.png" alt="a=0xaa">
+	</div>
+
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">b=0x55;</code></pre>
+		<img src="img/0028.png" alt="b=0x55">
+	</div>
+
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">c=a^b;</code></pre>
+		<img src="img/0029.png" alt="C=a^b">
+	</div>
+</div>
+
+
+<h2>NOT ( ~ )</h2>
+
+<div class="op-grid">
+	<div class="op-img">
+		<img src="img/0031.png" alt="Operador not">
+	</div>
+	
+	<div class="op-code">
+		<pre class="line-numbers"><code class="language-c">char a,b;</code></pre>
+	</div>
+	
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">a=0xaa;</code></pre>
+		<img src="img/0027.png" alt="a=0xaa">
+	</div>
+	
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">b=~a;</code></pre>
+		<img src="img/0028.png" alt="b=0x55">
+	</div>
+</div>
+
+
+<h1>Desplazamiento izquierdo ( &lt;&lt; ) </h1>
+
+<ul>
+<li> 	Produce el desplazamiento de los bits de la variable hacia la izquierda en la cantidad expresada</li>
+<li> 	Inserta ceros en los bits menos significativos</li>
+<li> 	Su sintaxis es  variable1 = variable2 &lt;&lt; cantidad_desplaz;</li>
+</ul>
+
+<div class="op-grid no-img">
+	<div class="op-code">
+		<pre class="line-numbers"><code class="language-c">char a,b;</code></pre>
+	</div>
+	
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">a=0xaa;</code></pre>
+		<img src="img/0027.png" alt="a=0xaa">
+	</div>
+	
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">b=a&lt;&lt;3;</code></pre>
+		<img src="img/0032.png" alt="b=a&lt;&lt;3">
+	</div>
+</div>
+
+<h1>Desplazamiento derecho ( &gt;&gt; ) </h1>
+
+<ul>
+<li> 	Produce el desplazamiento de los bits de la variable hacia la derecha en la cantidad expresada</li>
+<li> 	Inserta ceros en los bits mas significativos</li>
+<li> 	Su sintaxis es  variable1 = variable2 &gt;&gt; cantidad_desplaz;</li>
+</ul>
+
+<div class="op-grid no-img">
+	<div class="op-code">
+		<pre class="line-numbers"><code class="language-c">char a,b;</code></pre>
+	</div>
+	
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">a=0xaa;</code></pre>
+		<img src="img/0027.png" alt="a=0xaa">
+	</div>
+	
+	<div class="op-code-img">
+		<pre class="line-numbers"><code class="language-c">b=a&gt;&gt;3;</code></pre>
+		<img src="img/0033.png" alt="b=a&gt;&gt;3">
+	</div>
+</div> 
+
+<h1>ENUMERACIONES</h1>
+
+<h2>Declaración</h2>
+
+<pre class="line-numbers"><code class="language-c">
+enum etiqueta { constante_1;
+                constante_2;
+                constante_3;
+                . . .
+                . . .
+                constante _n;} lista_de_variables;
+</code></pre>
+
+<pre class="line-numbers"><code class="language-c">
+enum etiqueta { constante_1;
+                constante_2;
+                constante_3;
+                . . .
+                . . .
+                constante _n;};
+</code></pre>
+
+<h3>Ejemplos:</h3>
+
+<pre class="line-numbers"><code class="language-c">
+enum color {
+	blanco,
+	negro,
+	verde,
+	azul,
+	rojo};
+</code></pre>
+
+<pre class="line-numbers"><code class="language-c">
+enum dias {
+	lunes=2,
+	martes,
+	miercoles,
+	jueves,
+	viernes};
+</code></pre>
+
+<pre class="line-numbers"><code class="language-c">
+enum cargos {
+	titular,
+	asociado,
+	adjunto,
+	jtp=10,
+	atp1,
+	atp2};
+</code></pre>
+
+<pre class="line-numbers"><code class="language-c">
+enum mes {
+	ene=10,
+	feb,
+	mar,
+	abr=20,
+	may,
+	jun,
+	jul=30,
+	ago,
+	sep,
+	oct=40,
+	nov,
+	dic};
+</code></pre>
+
+</div>
+</main>
+
+<footer class="footer-nav">
+  <div class="container">
+  <a href="campos.html" class="btn">Anterior</a>
+  <a href="archivos.html" class="btn">Siguiente</a>
+  </div>
+</footer>
+
+<script src="js/prism.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

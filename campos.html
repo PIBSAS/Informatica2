@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEMA 4</title>
+  <meta name="author" content="Ing. Osvaldo M. Pini"/>
+  <meta name="created" content="1999-04-15T21:05:52"/>
+  <meta name="changed" content="00:00:00"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prism.css">
+  
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Informática II</h1>
+    </div>
+</header>
+
+<main>
+  <div class="container">
+
+<h1>CAMPOS DE BITS</h1>
+
+<h2>Declaración</h2>
+<p>La declaración de un campo de bits se realiza de una de tres diferentes formas:</p>
+
+<h3>Forma 1:</h3>
+<pre class="line-numbers"><code class="language-c">
+struct etiqueta {   tipo entero campo_1: cantidad de bits;
+                    tipo entero campo_2: cantidad de bits;
+                    tipo entero campo_3: cantidad de bits;
+                    . . .
+                    . . .
+                    tipo entero campo_n: cantidad de bits;} lista_de_variables;
+</code></pre>
+
+<h3>Forma 2:</h3>
+<pre class="line-numbers"><code class="language-c">
+struct {   tipo entero campo_1: cantidad de bits;
+           tipo entero campo_2: cantidad de bits;
+           tipo entero campo_3: cantidad de bits;
+           . . .
+           . . .
+           tipo entero campo_n: cantidad de bits;} lista_de_variables;
+</code></pre>
+
+<h3>Forma 3:</h3>
+<pre class="line-numbers"><code class="language-c">
+struct etiqueta {   tipo entero campo_1: cantidad de bits;
+                    tipo entero campo_2: cantidad de bits;
+                    tipo entero campo_3: cantidad de bits;
+                    . . .
+                    . . .
+                    tipo entero campo_n: cantidad de bits;};
+</code></pre>
+
+
+
+<h2>Ubicación de los campos de bits en la memoria</h2>
+
+<pre class="line-numbers"><code class="language-c">
+struct datos {  unsigned char A:1;
+                unsigned char B:4;
+    			unsigned char C:3;};
+</code></pre>
+<img class="img-diagrama" src="img/0015.png" alt="Ubicación de los campos de bits en la memoria">
+
+
+
+<h2>Referencia a un campo de bits</h2>
+
+<pre class="line-numbers"><code class="language-c">
+struct datos {  unsigned char A:1;
+			    unsigned char B:4;
+			    unsigned char C:3;}BIT;
+</code></pre>
+<div class="op-row">
+<p>BIT.A</p>
+<img src="img/0016.png" alt="BIT.A">
+
+<p>BIT.B</p>
+<img src="img/0017.png" alt="BIT.B">
+
+<p>BIT.C</p>
+<img src="img/0018.png" alt="BIT.C">
+</div>
+
+
+<h2>Asignación de valores en un campo de bits</h2>
+
+<pre class="line-numbers"><code class="language-c">
+struct datos {  unsigned char A:1;
+			    unsigned char B:4;
+			    unsigned char C:3;}BIT;
+</code></pre>
+
+<div class="op-row">
+<p>BIT.A=1</p>
+<img src="img/0019.png" alt="BIT.A=1">
+
+<p>BIT.B=0xC</p>
+<img src="img/0020.png" alt="BIT.B=0xC">
+
+<p>BIT.C=5</p>
+<img src="img/0021.png" alt="BIT.C=5">
+</div>
+
+</div>
+</main>
+
+<footer class="footer-nav">
+  <div class="container">
+  <a href="union.html" class="btn">Anterior</a>
+  <a href="bitwise.html" class="btn">Siguiente</a>
+  </div>
+</footer>
+
+<script src="js/prism.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
